@@ -3,7 +3,7 @@
 This web map shows four places of interest in my life. 
 
 ## Map link
-https://mgaw2.github.io/Gaw-Assignment-5/ 
+https://mgaw2.github.io/week6Assignment/
 
 ## Places of interest
 
