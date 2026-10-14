@@ -1,34 +1,40 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
-  <title>Intro To Web GiS, Assignment 5</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matthew Gaw - GIST 5300 - Assignment 5</title>
+  <link rel="stylesheet" href="https://js.arcgis.com/5.1/esri/css/main.css">
   <style>
-    html,
-    body,
-    #map {
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      height: 100%;
-    }
+    html, body { height: 100%; margin: 0; font-family: Arial, sans-serif; }
+    body { display: flex; flex-direction: column; }
+    header { padding: 12px 18px; background: #eef4f3; }
+    h1 { margin: 0 0 8px; font-size: 22px; }
+    p { margin: 8px 0; }
+    input, button { padding: 8px; margin: 3px 0; font-size: 15px; }
+    button { cursor: pointer; }
+    #map { flex: 1; min-height: 300px; }
   </style>
+  <script src="obj.js" defer></script>
+  <script type="module" src="map.js"></script>
 </head>
-<link rel="stylesheet" href="https://js.arcgis.com/5.1/esri/css/main.css">
-<script src="https://js.arcgis.com/5.1/"></script>
-
-<script type="module" src="map.js"></script>
-<script type="text/javascript" src="obj.js"></script>
-<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
-
 <body>
-
-  <div id="map" class="map">
-  </div>
-
-
+  <header>
+    <h1>My Places of Interest</h1>
+    <form id="searchForm">
+      <label for="citySearch">City:</label>
+      <input id="citySearch" list="cities" placeholder="Enter a city name" required>
+      <datalist id="cities">
+        <option value="Laramie"></option>
+        <option value="Athens"></option>
+        <option value="Atlanta"></option>
+        <option value="Montreat"></option>
+      </datalist>
+      <button type="submit">Search</button>
+      <button id="reset" type="button">Show all places</button>
+    </form>
+    <p>Teal dots = places. Orange numbered circles = groups of nearby places.</p>
+  </header>
+  <div id="map" aria-label="Interactive 3D map of my places"></div>
 </body>
-
 </html>
